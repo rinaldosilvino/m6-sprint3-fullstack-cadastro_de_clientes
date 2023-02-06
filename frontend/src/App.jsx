@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from "./pages/register";
-import Controller from "./pages/Contoller";
+import Controller from "./pages/contoller";
 
 function App() {
   return (

@@ -2,7 +2,7 @@ import { Input } from "@mui/material";
 import { useState } from "react";
 import { StyledField, StyledLabel } from "./styled";
 
-const RcInput = ({ title, type, name, id, register }) => {
+const RcInput = ({defaultValue, title, type, name, id, register,disabled }) => {
   const [typeInput, setTypeInput] = useState(type);
   return (
     <StyledField>
@@ -12,6 +12,8 @@ const RcInput = ({ title, type, name, id, register }) => {
         id={id}
         name={name}
         type={typeInput}
+        defaultValue={defaultValue}
+        disabled={disabled}
       ></Input>
     </StyledField>
   );

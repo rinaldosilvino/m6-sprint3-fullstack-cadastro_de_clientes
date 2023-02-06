@@ -9,6 +9,7 @@ export const ButtonStyle = styled.button`
     border-radius: 4px;
     color: #FFFFFF;
     font-size: 13px;
+    margin: 10px;
     
     text-align: center;
     font-weight: 500;

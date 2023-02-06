@@ -1,6 +1,6 @@
 # Nome do projeto
 
-m6-sprint3-fullstack-cadastro_de_clientes
+m6-sprint2-desafio_backend
 
 ## Projeto e Funcionalidades:
 
