@@ -4,12 +4,12 @@ m6-sprint2-desafio_backend
 
 ## Projeto e Funcionalidades:
 
-A aplicação tem como objetivo criar um pequeno cadastro de clientes com vínculo de contatos, depois mostrar o cliente e seus contatos vinculados.
+A aplicação tem como objetivo criar um pequeno cadastro de contactses com vínculo de contatos, depois mostrar o contactse e seus contatos vinculados.
 
 # Clone do projeto
 
 ```
-git clone git@github.com:rinaldosilvino/m6-sprint3-fullstack-cadastro_de_clientes.git
+git clone git@github.com:rinaldosilvino/m6-sprint3-fullstack-cadastro_de_contactses.git
 ```
 
 # Tecnologias utilizadas
