@@ -1,15 +1,15 @@
 # Nome do projeto
 
-m6-sprint3-fullstack-cadastro_de_clientes
+Cadastro de clientes-fullstack
 
 ## Projeto e Funcionalidades:
 
-A aplicação tem como objetivo criar um pequeno cadastro de clientes com vínculo de contatos, depois mostrar o cliente e seus contatos vinculados.
+A aplicação tem como objetivo criar um pequeno cadastro de contatos com vínculo, depois mostrar os clientes e seus contatos vinculados.
 
 # Clone do projeto
 
 ```
-git clone git@github.com:rinaldosilvino/m6-sprint3-fullstack-cadastro_de_clientes.git
+git clone git@github.com:rinaldosilvino/m6-sprint3-fullstack-cadastro_de_contactses.git
 ```
 
 # Tecnologias utilizadas
@@ -17,6 +17,8 @@ git clone git@github.com:rinaldosilvino/m6-sprint3-fullstack-cadastro_de_cliente
 React (JavaScript)
 Node.js
 Express
+
+### Primeiro passo é acessar o Backend
 
 # BACKEND
 
@@ -38,6 +40,8 @@ yarn add package.json
 yarn dev
 ````
 
+### Em seguida o Frontend pode ser acessado
+
 # FRONTEND 
 
 # Acessar diretorio
@@ -55,8 +59,5 @@ yarn install
 # Iniciar projeto
 
 ````
-yarn start
+yarn dev
 ````
-
-
-

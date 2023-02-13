@@ -5,7 +5,6 @@ import AppDataSource from "../../data-source";
 const createClientService = async ({nome,email, telefone}:IClientRequest): Promise<Clients> => {
 
     const userRepository = AppDataSource.getRepository(Clients)
-    
     const user =  new Clients()
     user.nome = nome;
     user.email = email;

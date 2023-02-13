@@ -14,7 +14,6 @@ const updateClientService = async ( {nome, email, telefone}: IClientUpdate, clie
   if(!client){
     return new Clients
   }
-
   await clientsRepository.update( client_id, { nome: nome, email: email, telefone: telefone})
 
   const userUpdate = await clientsRepository.findOneBy({client_id:client_id})

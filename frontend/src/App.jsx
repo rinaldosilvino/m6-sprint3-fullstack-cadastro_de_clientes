@@ -1,21 +1,32 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Register from "./pages/register";
 import Controller from "./pages/contoller";
+import RegisterClient from "./pages/register/client";
+import RegisterContact from "./pages/register/contact";
+import UpdateClient from "./pages/update/client";
+import UpdateContact from "./pages/update/contact";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Controller type="CL" />}></Route>
+          <Route path="/" element={<Controller/>}></Route>
           <Route
             path="/RegisterClient"
-            element={<Register type="CT" />}
+            element={<RegisterClient/>}
           ></Route>
           <Route
             path="/RegisterContact"
-            element={<Register type="CT" />}
+            element={<RegisterContact/>}
+          ></Route>
+          <Route
+            path="/UpdateClient"
+            element={<UpdateClient/>}
+          ></Route>
+          <Route
+            path="/UpdateContact"
+            element={<UpdateContact/>}
           ></Route>
         </Routes>
       </Router>

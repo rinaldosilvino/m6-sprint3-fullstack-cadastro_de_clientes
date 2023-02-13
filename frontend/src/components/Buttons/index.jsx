@@ -1,7 +1,7 @@
 import { ButtonStyle } from "./styles";
 
 const RcButton = (props) => {
-  return <ButtonStyle type="submit">{props.title}</ButtonStyle>;
+  return <ButtonStyle {...props}>{props.children}</ButtonStyle>;
 };
 
 export default RcButton;

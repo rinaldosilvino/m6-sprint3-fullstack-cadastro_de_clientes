@@ -1,8 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne} from "typeorm";
-import { Clients } from "./client.entity"
 
-
-@Entity()
+@Entity('contacts')
 export class Contacts {
     @PrimaryGeneratedColumn()
     contact_id: number;

@@ -15,7 +15,7 @@ export const ButtonStyle = styled.button`
     font-weight: 500;
         :hover {
         border: 1px solid #FF427F;
-        background-color: #76BA76;
+        background-color: #808080;
         color: #FFFFFF;
         cursor: pointer;
         }

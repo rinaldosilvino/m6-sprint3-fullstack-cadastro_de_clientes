@@ -13,7 +13,7 @@ contactsRouter.post("",createContactController);
 contactsRouter.get("",listContactsController);
 contactsRouter.get("/:id",findByIdContactController);
 contactsRouter.get("/clients/:id",findByIdContactClientController);
-contactsRouter.patch("",updateContactController)
+contactsRouter.patch("/:id",updateContactController)
 contactsRouter.delete("/:id",deleteContactController)
 
 export default contactsRouter;

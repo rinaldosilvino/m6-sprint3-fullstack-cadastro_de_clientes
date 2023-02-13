@@ -5,9 +5,9 @@ import { getMetadataArgsStorage } from 'typeorm';
 
 const listClientsService = async () :Promise<IClient[]> => {
     const userRepository = AppDataSource.getRepository(Clients)
-    console.log(getMetadataArgsStorage().tables)
+
     const response = await userRepository.find()
-    console.log(response)
+
     const users = response.map(user => {
       return user;
     })

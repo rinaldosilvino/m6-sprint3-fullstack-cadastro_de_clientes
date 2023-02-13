@@ -1,4 +1,4 @@
-import { Input } from "@mui/material";
+import { Input, Typography } from "@mui/material";
 import styled from "styled-components";
 
 export const StyledField = styled.div`
@@ -12,3 +12,7 @@ export const StyledLabel = styled.label`
   color: black;
   font-weight: 600;
 `;
+export const StyledTitle = styled(Typography)`
+  padding-bottom: 5px;
+
+`

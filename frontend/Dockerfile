@@ -1,7 +1,6 @@
 FROM node:lts AS development
 
 WORKDIR /app
-WORKDIR /datasource
 
 COPY package*.json ./
 
@@ -9,6 +8,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3002
+EXPOSE 3000
 
-CMD ["npm", "start"] 
+CMD ["npm", "start"]

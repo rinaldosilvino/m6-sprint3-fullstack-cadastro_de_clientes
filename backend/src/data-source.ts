@@ -6,14 +6,15 @@ import { Contacts } from "./entities/contact.entity"
 const AppDataSource = new DataSource(
     {
         type: "postgres",
-        host: "localhost",
+        host: process.env.DB_HOST,
         port: 5432,
-        username: "postgres",
-        password: "Ricardo09",
-        database: "test_dataBase",
+        username: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB,
         logging: true,
         synchronize: false,
-        entities: [Clients, Contacts]
+        entities: [Clients, Contacts],
+        migrations: ['src/migrations/*.ts']
     }
 )
 
