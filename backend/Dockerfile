@@ -1,7 +1,6 @@
 FROM node:lts AS development
 
 WORKDIR /app
-WORKDIR /datasource
 
 COPY package*.json ./
 

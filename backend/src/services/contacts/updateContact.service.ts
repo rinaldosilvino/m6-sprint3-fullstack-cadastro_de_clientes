@@ -1,4 +1,3 @@
-
 import AppDataSource from "../../data-source";
 import { Contacts } from "../../entities/contact.entity";
 import { IContactUpdate } from "../../interfaces/contacts";
@@ -7,7 +6,7 @@ const updateContactService = async ( {nome,email,telefone}: IContactUpdate, cont
 
   const contactRepository = AppDataSource.getRepository(Contacts);
   const contacts = await contactRepository.find()
-
+  
   const contact = contacts.find(user => user.contact_id === contact_id)
   if(!contact){
     return new Contacts

@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+      POSTGRES_INITDB_ARGS: -U myuser -d mydb -a -v ON_ERROR_STOP=1
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./docker-database-initial.sql:/docker-entrypoint-initdb.d/docker-database-initial.sql
+    networks:
+      - app-network
+  backend:
+    build: ./backend
+    ports:
+      - "3002:3002"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: myuser
+      DB_PASSWORD: mypassword
+      DB_NAME: mydb
+    networks:
+      - app-network
+  frontend:
+    build: ./frontend
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - app-network
+    environment:
+      - NODE_ENV=dev
+    depends_on:
+      - backend
+networks:
+  app-network:
+    driver: bridge
