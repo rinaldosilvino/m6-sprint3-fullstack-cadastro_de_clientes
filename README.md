@@ -43,10 +43,16 @@ yarn add package.json
 cp .env.example .env 
 ````
 
+# Criar migrações (É necessária a criação de novas migrations)
+````
+yarn typeorm migration:generate  src/migrations/createTables  -d src/data-source.ts
+````
+
 # Rodar Migrations
 ````
 yarn typeorm migration:run -d src/data-source.ts
 ````
+
 # Iniciar projeto
 ````
 yarn dev
@@ -64,7 +70,7 @@ cd frontend
 
 #  Instalar dependencias
 ````
-yarn add
+yarn add package.json
 ````
 
 # Iniciar projeto
