@@ -6,11 +6,20 @@ import RcButton from "../../../components/Buttons";
 import custom_http from "../../../services/custom_http";
 import CircularIndeterminate from "../../../components/Loading";
 import { useLocation, useNavigate } from "react-router-dom";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 export default function RegisterClient(props) {
   const [date, setDate] = React.useState(
     new Date(Date.now()).toLocaleDateString("fr-CA")
   );
+
+  const schema = yup.object().shape({
+    name: yup.string().required("Campo precisa ser preenchido"),
+    email: yup.string().required("Campo precisa ser preenchido"),
+    phone: yup.string().required("Campo precisa ser preenchido"),
+  });
+
   const [loading, setLoading] = React.useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -18,17 +27,22 @@ export default function RegisterClient(props) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({});
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-  async function onSubmit(data) {
+  async function handleRegister(data) {
     setLoading(true);
     const body = {
       nome: data.name,
       email: data.email,
       telefone: data.phone,
     };
-    const response = await custom_http.post("/clients", body);
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
 
+    const response = await custom_http.post("/clients", body);
     setLoading(false);
     navigate("/");
     return;
@@ -42,27 +56,30 @@ export default function RegisterClient(props) {
     <DivMain>
       <StyledTitle variant="h6">Cadastro de Cliente</StyledTitle>
       <StyledDivForm>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(handleRegister)}>
           <RcInput
             register={register}
             title="Nome"
-            id="name"
+            id="name_1"
             name="name"
             type="text"
+            errors={errors}
           />
           <RcInput
             title="Email"
             register={register}
-            id="email"
+            id="email_1"
             name="email"
             type="text"
+            errors={errors}
           />
           <RcInput
             title="Telefone"
             register={register}
-            id="phone"
+            id="phone_1"
             name="phone"
             type="text"
+            errors={errors}
           />
           <RcInput
             title="Data de registro"
